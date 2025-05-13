@@ -48,11 +48,11 @@ With environmental variables defining settings:
 
 ```bash
 docker run -d -p 5069:5069 \\
-  -e NO_API_CHECK=false \\
+  -e NO_API_CHECK=true \\
   -e PW_LENGTH=12 \\
-  -e PW_INCLUDE_UPPERCASE=false \\
-  -e PW_INCLUDE_DIGITS=false \\
-  -e PW_INCLUDE_SPECIAL=false \\
+  -e PW_INCLUDE_UPPERCASE=true \\
+  -e PW_INCLUDE_DIGITS=true \\
+  -e PW_INCLUDE_SPECIAL=true \\
   -e PW_EXCLUDE_HOMOGLYPHS=true \\
   -e PP_WORD_COUNT=4 \\
   -e PP_CAPITALIZE=false \\
@@ -61,17 +61,17 @@ docker run -d -p 5069:5069 \\
   -e PP_MAX_WORD_LENGTH=12 \\
   -e PP_INCLUDE_NUMBERS=false \\
   -e PP_INCLUDE_SPECIAL_CHARS=false \\
-  -e PP_LANGUAGE=en \\
+  -e PP_LANGUAGE=de \\
   -e PP_HIDE_LANG=false \\
   -e PP_LANGUAGE_CUSTOM='' \\
   -e MULTI_GEN=true \\
-  -e GENERATE_PP=true \\
+  -e GENERATE_PP=false \\
   -e ROBOTS_ALLOW=false \\
   -e GOOGLE_SITE_VERIFICATION='' \\
-  -e DISABLE_URL_CHECK=false \\
+  -e DISABLE_URL_CHECK=true \\
   -e BASE_PATH='' \\
   -e PP_LOCAL_WORDLIST=/app/custom_wordlist.txt \\
-  -v "A:\german.txt:/app/custom_wordlist.txt" \\
+  -v "/DATA/AppData/pwgen/german.txt:/app/custom_wordlist.txt" \\
   pwgen-german
 ```
 ## Requirements
