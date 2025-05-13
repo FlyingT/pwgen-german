@@ -1,10 +1,10 @@
-# Secure Password Generator
+# Secure Password Generator - Translated to German
 
 ## Description
 
 This simple docker web application is designed to generate secure passwords or passphrases with customizable options. Users can opt to generate either a random password with specific criteria or a passphrase composed of random words. It includes features for enhancing password strength, such as including uppercase letters, digits, and special characters for passwords, or capitalizing words and specifying separators for passphrases.
 
-A demo of the software is available on [https://pwgen.joonatanh.com](https://pwgen.joonatanh.com) (`main` branch).
+A demo of the original english software is available on [https://pwgen.joonatanh.com](https://pwgen.joonatanh.com) (`main` branch).
 
 ## Features
 
@@ -29,23 +29,24 @@ A demo of the software is available on [https://pwgen.joonatanh.com](https://pwg
 ## How to Use
 
 1. **Install Docker** if you haven't already.
-2. **Run the Generator**: Pull the image `jocxfin/pwgen:latest` and then run it using the following commands:
+2. **Clone the Repository and build the image** using the following commands:
 
 ```bash
-docker pull jocxfin/pwgen:latest
-docker run -d -p 5069:5069 jocxfin/pwgen:latest
+git clone https://github.com/FlyingT/pwgen-german.git
+cd cd pwgen-german
+docker build -t pwgen-german .
+
 ```
 
 To enable **Offline Mode**, append `-e NO_API_CHECK=true` to the `docker run` command:
 
 ```bash
-docker run -d -p 5069:5069 -e NO_API_CHECK=true jocxfin/pwgen:latest
+docker run -d -p 5069:5069 -e NO_API_CHECK=true pwgen-german
 ```
 
 With environmental variables defining settings:
 
 ```bash
-docker pull jocxfin/pwgen:latest
 docker run -d -p 5069:5069 \\
   -e NO_API_CHECK=false \\
   -e PW_LENGTH=12 \\
@@ -71,7 +72,7 @@ docker run -d -p 5069:5069 \\
   -e BASE_PATH='' \\
   -e PP_LOCAL_WORDLIST=/app/custom_wordlist.txt \\
   -v "A:\german.txt:/app/custom_wordlist.txt" \\
-  jocxfin/pwgen:latest
+  pwgen-german
 ```
 ## Requirements
 
