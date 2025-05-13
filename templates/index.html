@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PwGen</title>
+    <title>Passwortgenerator</title>
     <meta name="description" content="Secure password generator">
     <meta name="keywords" content="Secure, haveibeenpwned, password, password-generator, password generator">
     <meta name="author" content="jocxfin">
@@ -29,31 +29,31 @@
 
 <body>
     <div class="container">
-        <h1 id="header1">Generate a Secure Password</h1>
+        <h1 id="header1">Sicheres Kennwort generieren</h1>
         <div id="passwordOptions">
             <div id="checkbox-wrapper">
-                <p>Include Uppercase Letters</p>
+                <p>beinhaltet Großbuchstaben</p>
                 <div class="checkbox-kaare">
                     <input class="tgl toggle-omena" type="checkbox" id="includeUppercase">
                     <label class="tgl-btn" for="includeUppercase"></label>
                 </div>
             </div>
             <div id="checkbox-wrapper">
-                <p>Include Digits</p>
+                <p>beinhaltet Zahlen</p>
                 <div class="checkbox-kaare">
                     <input class="tgl toggle-omena" type="checkbox" id="includeDigits">
                     <label class="tgl-btn" for="includeDigits"></label>
                 </div>
             </div>
             <div id="checkbox-wrapper">
-                <p>Include Special Characters</p>
+                <p>beinhaltet Sonderzeichen</p>
                 <div class="checkbox-kaare">
                     <input class="tgl toggle-omena" type="checkbox" id="includeSpecial">
                     <label class="tgl-btn" for="includeSpecial"></label>
                 </div>
             </div>
             <div id="checkbox-wrapper">
-                <p>Exclude Homoglyphs</p>
+                <p>keine verwechselbaren Zeichen</p>
                 <div class="checkbox-kaare">
                     <input class="tgl toggle-omena" type="checkbox" id="excludeHomoglyphs">
                     <label class="tgl-btn" for="excludeHomoglyphs"></label>
@@ -66,21 +66,21 @@
         </div>
         <div id="passphraseOptions" style="display: none;">
             <div id="checkbox-wrapper">
-                <p>Capitalize Words</p>
+                <p>Wörter großschreiben</p>
                 <div class="checkbox-kaare">
                     <input class="tgl toggle-omena" type="checkbox" id="capitalizeWords">
                     <label class="tgl-btn" for="capitalizeWords"></label>
                 </div>
             </div>
             <div id="checkbox-wrapper">
-                <p>Include Numbers</p>
+                <p>beinhaltet Zahlen</p>
                 <div class="checkbox-kaare">
                     <input class="tgl toggle-omena" type="checkbox" id="includeNumbers">
                     <label class="tgl-btn" for="includeNumbers"></label>
                 </div>
             </div>
             <div id="checkbox-wrapper">
-                <p>Include Special Characters</p>
+                <p>beinhaltet Sonderzeichen</p>
                 <div class="checkbox-kaare">
                     <input class="tgl toggle-omena" type="checkbox" id="includeSpecialChars">
                     <label class="tgl-btn" for="includeSpecialChars"></label>
@@ -91,26 +91,26 @@
             {% else %}
             <div id="checkbox-wrapper">
             {% endif %}
-                <label for="languageSelect">Language:</label>
+                <label for="languageSelect">Sprache:</label>
                 <select id="languageSelect">
-                    <option value="en">English</option>
-                    <option value="fi">Finnish</option>
-                    <option value="fr">French</option>
-                    <option value="custom">Custom list</option>
+                    <option value="en">Englisch</option>
+                    <option value="fi">Finnisch</option>
+                    <option value="fr">Französisch</option>
+                    <option value="custom">Eigene Liste</option>
             {% if pp_settings.wordListLocal %}
-                    <option value="" selected disabled>Local list</option>
+                    <option value="" selected disabled>Lokale Liste</option>
             {% endif %}
                 </select>
                 <input type="text" id="customLanguage" placeholder="Enter custom url for text file" style="display: none;">
             </div>
             <div id="checkbox-wrapper">
-                <label for="separator">Separator:</label>
+                <label for="separator">Trennzeichen:</label>
                 <select id="separator">
-                    <option value="dash">Dash</option>
-                    <option value="number">Random Number</option>
-                    <option value="special">Random Special Character</option>
-                    <option value="space">Space</option>
-                    <option value="custom">User Defined</option>
+                    <option value="dash">Strich</option>
+                    <option value="number">Zufallszahl</option>
+                    <option value="special">Sonderzeichen</option>
+                    <option value="space">Leerzeichen</option>
+                    <option value="custom">Benutzerdefiniert</option>
                 </select>
                 <input type="text" id="customSeparator" placeholder="Enter custom separator" style="display: none;">
             </div>
@@ -120,7 +120,7 @@
             {% endif %}
             {% set default_options = default_options | sort %}
             <div id="checkbox-wrapper">
-              <label for="maxWordLength">Max Word Length:</label>
+              <label for="maxWordLength">Maximale Wortlänge:</label>
               <select id="maxWordLength">
                 {% for option in default_options %}
                   <option value="{{ option }}" {% if option == pp_settings.max_word_length %}selected{% endif %}>
@@ -130,13 +130,13 @@
               </select>
             </div>                
             <div id="wordCountContainer">
-                <label for="wordCountSlider">Word Count: <span id="wordCountValue"></span></label>
+                <label for="wordCountSlider">Anzahl Worte: <span id="wordCountValue"></span></label>
                 <input type="range" id="wordCountSlider" name="wordCount" min="2" max="10" value="">
             </div>
         </div>
         <div id="passphrase-wrapper">
             <div id="checkbox-wrapper">
-                <p>Generate Passphrase</p>
+                <p>Passphrase erstellen</p>
                 <div class="checkbox-kaare">
                     <input class="tgl toggle-omena" type="checkbox" id="passphraseToggle">
                     <label class="tgl-btn" for="passphraseToggle"></label>
@@ -171,19 +171,19 @@
         <div id="passphrase-wrapper" class="infotext-wrapper">
             <div id="checkbox-wrapper">
                 {% if no_api_check %}
-                <p id="infotext">Offline mode enabled. No checks are ran against haveibeenpwned-API.</p>
+                <p id="infotext">Offline Modus aktiviert</p>
                 {% else %}
                 <p id="infotext">
-                    All passwords and passphrases created are cross-referenced with 
+                    Alle Passwörter und Passphrasen werden mit der 
                     <a id="apilink" href="https://haveibeenpwned.com" target="_blank" rel="noopener noreferrer">
                         haveibeenpwned
-                    </a>-API to guarantee they have not been compromised in past data breaches.
+                    </a>-API geprüft um sicherzugehen, dass sie in keiner Datenbank gestohlener Kennwörter stehen.
                 </p>
                 {% endif %}
             </div>
         </div>
         <footer>
-            <p>Simple password generator made by <a href="https://github.com/jocxfin/pwgen" target="_blank" rel="noopener noreferrer">jocxFIN</a></p>
+            <p>Einfacher Kennwortgenerator auf Basis der Arbeit von <a href="https://github.com/jocxfin/pwgen" target="_blank" rel="noopener noreferrer">jocxFIN, übersetzt von Tim</a></p>
         </footer>
     </div>
     <script>
