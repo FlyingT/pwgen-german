@@ -33,7 +33,7 @@ A demo of the original english software is available on [https://pwgen.joonatanh
 
 ```bash
 git clone https://github.com/FlyingT/pwgen-german.git
-cd cd pwgen-german
+cd pwgen-german
 docker build -t pwgen-german .
 
 ```
