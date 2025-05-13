@@ -427,7 +427,7 @@ footer a:hover {
 }
 
 .checkbox-kaare .toggle-omena+.tgl-btn:before {
-    content: "No";
+    content: "Nein";
     left: 28px;
     color: var(--g04);
     transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -454,7 +454,7 @@ footer a:hover {
 }
 
 .checkbox-kaare .toggle-omena:checked+.tgl-btn:before {
-    content: "Yes";
+    content: "Ja";
     left: 4px;
     color: #fff;
 }
