@@ -161,17 +161,17 @@
         {% else %}
         <div class="password-container" style="display: flex;">
             <input type="text" id="password" oncopy="onCopy()" readonly>
-            <button id="copypwd" onclick="copyPassword(100)">copy password</button>
+            <button id="copypwd" onclick="copyPassword(100)">kopieren</button>
         </div>
         {% endif %}
 
         <div id="checkbox-wrapper" class="buttonwrapper">
-            <button id="refreshpw" class="button">Generate</button>
+            <button id="refreshpw" class="button">Generieren</button>
         </div>
         <div id="passphrase-wrapper" class="infotext-wrapper">
             <div id="checkbox-wrapper">
                 {% if no_api_check %}
-                <p id="infotext">Offline Modus aktiviert</p>
+                <p id="infotext">Offline Modus aktiviert, kein Abgleich mit Online-Datenbanken</p>
                 {% else %}
                 <p id="infotext">
                     Alle Passwörter und Passphrasen werden mit der 
