@@ -66,20 +66,21 @@ docker run -d --name pwgen-german -p 5069:5069 \\
   -e PP_INCLUDE_SPECIAL_CHARS=false \\
   -e PP_LANGUAGE=custom \\
   -e PP_HIDE_LANG=false \\
-  -e PP_LANGUAGE_CUSTOM='https://raw.githubusercontent.com/FlyingT/pwgen-german/refs/heads/main/wordlist.txt' \\
+  -e PP_LANGUAGE_CUSTOM='https://raw.githubusercontent.com/FlyingT/pwgen-german/refs/heads/main/wordlist_de.txt' \\
   -e MULTI_GEN=true \\
   -e GENERATE_PP=false \\
   -e ROBOTS_ALLOW=false \\
   -e GOOGLE_SITE_VERIFICATION='' \\
   -e DISABLE_URL_CHECK=true \\
   -e BASE_PATH='' \\
-  -e PP_LOCAL_WORDLIST=/app/custom_wordlist.txt \\
+  -e PP_LOCAL_WORDLIST= \\
   -v "/DATA/AppData/pwgen/custom_wordlist.txt:/app/custom_wordlist.txt" \\
   pwgen-german
 ```
 Or, here is the oneliner:
 ```bash
-docker run -d --name pwgen-german -p 5069:5069 -e NO_API_CHECK=true -e PW_LENGTH=12 -e PW_INCLUDE_UPPERCASE=true -e PW_INCLUDE_DIGITS=true -e PW_INCLUDE_SPECIAL=true -e PW_EXCLUDE_HOMOGLYPHS=true -e PP_WORD_COUNT=4 -e PP_CAPITALIZE=false -e PP_SEPARATOR_TYPE=dash -e PP_USER_DEFINED_SEPARATOR='' -e PP_MAX_WORD_LENGTH=12 -e PP_INCLUDE_NUMBERS=false -e PP_INCLUDE_SPECIAL_CHARS=false -e PP_LANGUAGE=custom -e PP_HIDE_LANG=false -e PP_LANGUAGE_CUSTOM='https://raw.githubusercontent.com/FlyingT/pwgen-german/refs/heads/main/wordlist.txt' -e MULTI_GEN=true -e GENERATE_PP=false -e ROBOTS_ALLOW=false -e GOOGLE_SITE_VERIFICATION='' -e DISABLE_URL_CHECK=true -e BASE_PATH='' -e PP_LOCAL_WORDLIST=/app/custom_wordlist.txt -v "/DATA/AppData/pwgen/custom_wordlist.txt:/app/custom_wordlist.txt" pwgen-german
+docker run -d --name pwgen-german -p 5069:5069 -e NO_API_CHECK=true -e PW_LENGTH=12 -e PW_INCLUDE_UPPERCASE=true -e PW_INCLUDE_DIGITS=true -e PW_INCLUDE_SPECIAL=true -e PW_EXCLUDE_HOMOGLYPHS=true -e PP_WORD_COUNT=4 -e PP_CAPITALIZE=false -e PP_SEPARATOR_TYPE=dash -e PP_USER_DEFINED_SEPARATOR='' -e PP_MAX_WORD_LENGTH=12 -e PP_INCLUDE_NUMBERS=false -e PP_INCLUDE_SPECIAL_CHARS=false -e PP_LANGUAGE=custom -e PP_HIDE_LANG=false -e PP_LANGUAGE_CUSTOM='https://raw.githubusercontent.com/FlyingT/pwgen-german/refs/heads/main/wordlist_de.txt' -e MULTI_GEN=true -e GENERATE_PP=false -e ROBOTS_ALLOW=false -e GOOGLE_SITE_VERIFICATION='' -e DISABLE_URL_CHECK=true -e BASE_PATH='' -e PP_LOCAL_WORDLIST= -v "/DATA/AppData/pwgen/custom_wordlist.txt:/app/custom_wordlist.txt" pwgen-german
+
 ```
 
 ## Requirements
