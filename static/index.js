@@ -126,16 +126,16 @@ function copyPassword(index) {
   function updateButtonText(isFallback = false) {
     if (index === 100) {
       const button = document.querySelector('.password-container #copypwd');
-      button.innerHTML = "copied!";
+      button.innerHTML = "kopiert!";
       setTimeout(() => {
-        button.innerHTML = 'copy password';
+        button.innerHTML = 'Passwort kopieren';
       }, 1500);
     } else {
       const buttons = document.querySelectorAll(`.multipwcp${index}`);
       buttons.forEach(button => {
-        button.innerHTML = "copied!";
+        button.innerHTML = "kopiert!";
         setTimeout(() => {
-          button.innerHTML = 'copy';
+          button.innerHTML = 'kopieren';
         }, 1500);
       });
     }
