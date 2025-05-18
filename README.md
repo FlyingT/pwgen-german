@@ -6,6 +6,8 @@ This simple docker web application is designed to generate secure passwords or p
 
 A demo of the original english software is available on [https://pwgen.joonatanh.com](https://pwgen.joonatanh.com) (`main` branch).
 
+!(https://raw.githubusercontent.com/FlyingT/pwgen-german/refs/heads/main/Demo.png)
+
 ## Features
 
 - **User Interface**: Display the generated password or passphrase in a user-friendly interface with the option to copy it to the clipboard.
