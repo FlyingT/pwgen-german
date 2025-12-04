@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  pwgen-german:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pwgen-german
+    ports:
+      - "5069:5069"
+    environment:
+      - NO_API_CHECK=true
+      - PW_LENGTH=12
+      - PW_INCLUDE_UPPERCASE=true
+      - PW_INCLUDE_DIGITS=true
+      - PW_INCLUDE_SPECIAL=true
+      - PW_EXCLUDE_HOMOGLYPHS=true
+      - PP_WORD_COUNT=4
+      - PP_CAPITALIZE=false
+      - PP_SEPARATOR_TYPE=dash
+      - PP_USER_DEFINED_SEPARATOR=
+      - PP_MAX_WORD_LENGTH=12
+      - PP_INCLUDE_NUMBERS=false
+      - PP_INCLUDE_SPECIAL_CHARS=false
+      - PP_LANGUAGE=custom
+      - PP_HIDE_LANG=false
+      - PP_LANGUAGE_CUSTOM=https://raw.githubusercontent.com/FlyingT/pwgen-german/refs/heads/main/wordlist_de.txt
+      - MULTI_GEN=true
+      - GENERATE_PP=false
+      - ROBOTS_ALLOW=false
+      - GOOGLE_SITE_VERIFICATION=
+      - DISABLE_URL_CHECK=true
+      - BASE_PATH=
+      - PP_LOCAL_WORDLIST=
+    volumes:
+      - pwgen-german:/app/custom_wordlist.txt
+    restart: unless-stopped
+volumes:
+  pwgen-german_data:
+    name: pwgen-german_data
+networks:
+  default:
+    external: true
+    name: nomdockerinternal
